@@ -30,11 +30,11 @@ const userScheme = new Schema(
   { timestamps: true }
 );
 
-const Users = mongoose.model("users", userScheme);
+const users = mongoose.model("users", userScheme);
 
 //! Get all users
 app.get("/users", (req, res) => {
-  Users.find({}, (err, docs) => {
+  users.find({}, (err, docs) => {
     if (!err) {
       res.send(docs);
     } else {
@@ -47,23 +47,24 @@ app.get("/users", (req, res) => {
 app.get("/users/:id", (req, res) => {
   const { id } = req.params;
 
-  Users.findById(id, (err, docs) => {
+  users.findById(id, (err, docs) => {
     if (!err) {
       if (docs) {
         res.send(docs);
-        res.status(200);
+        // res.status(200);
       } else {
         res.status(404).json({ message: "NOT FOUND" });
       }
     } else {
       res.status(500).json({ message: err });
     }
+    // res.send(docs)
   });
 });
 
 //! Add new user
 app.post("/users", (req, res) => {
-  let user = new Users({
+  let user = new users({
     fullName: req.body.fullName,
     userName: req.body.userName,
     age: req.body.age,
@@ -76,7 +77,7 @@ app.post("/users", (req, res) => {
 //! Delete user by id
 app.delete("/users/:id", (req, res) => {
   const { id } = req.params;
-  Users.findByIdAndDelete(id, (err) => {
+  users.findByIdAndDelete(id, (err) => {
     if (!err) {
       res.send("SUCCESSFULLY DELETED");
     } else {
@@ -89,7 +90,7 @@ app.delete("/users/:id", (req, res) => {
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
 
-  Users.findByIdAndUpdate(id, req.body, (err, doc) => {
+  users.findByIdAndUpdate(id, req.body, (err, doc) => {
     if (!err) {
       res.status(201);
     } else {
