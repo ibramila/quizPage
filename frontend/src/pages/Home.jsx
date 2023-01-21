@@ -1,5 +1,4 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection/HeroSection'
 import Infrastructure from '../components/Infrastructure/Infrastructure'
 import Collaborate from "../components/Collaborate/Collaborate"
 import Cards from "../components/TestimonialCards/Cards"
@@ -12,7 +11,6 @@ import BlogPosts from '../components/BlogPosts/BlogPosts'
 function Home() {
   return (
     <>
-      <HeroSection />
       <InfoSection />
       <Infrastructure />
       <Collaborate />
@@ -22,7 +20,6 @@ function Home() {
       <Cards />
       <BlogPostsInfo />
       <BlogPosts />
-
     </>
   )
 }

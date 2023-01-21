@@ -27,11 +27,6 @@ function NavbarSide() {
               </li>
               <li /*className='drowdown'*/>
                 <NavLink style={({ isActive }) => (isActive ? activeNavbar : null)} to="/services"> Services</NavLink>
-                {/* <div class="dropdown-content">
-                  <Link href="#">Link 1</Link>
-                  <Link href="#">Link 2</Link>
-                  <Link href="#">Link 3</Link>
-                </div> */}
 
               </li>
               <li>
@@ -41,7 +36,7 @@ function NavbarSide() {
                 <NavLink style={({ isActive }) => (isActive ? activeNavbar : null)} to="/contact"> Contact</NavLink>
               </li>
             </ul>
-            <div className='add'>
+            <div className='addBtn'>
               <Link to="/add">Add</Link>
             </div>
           </div>
