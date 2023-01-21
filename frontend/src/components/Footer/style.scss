@@ -53,6 +53,12 @@ footer {
                     display: flex;
                     flex-direction: column;
                     gap: 30px;
+                    li{
+                        color: gray;
+                        ul li{
+                            color: white;
+                        }
+                    }
                 }
 
 
@@ -68,8 +74,17 @@ footer {
                 ul{
                     display: flex;
                     flex-direction: column;
+                    li{
+                        color: red;
+                    }
                 }
             }
         }
+.copyright{
+    color: #6c757d;
+a{
+    color: red;
+}
+}
     }
 }

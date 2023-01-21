@@ -6,7 +6,6 @@ export const loginFormSchema = yup.object().shape({
         .string("Job should be a string")
         .required("Job is required"),
     comment: yup.string()
-        .min(50, "password should have a minimum length of 5")
-        .max(500, "password should have a maximum length of 12")
+        .max(100, "This is max")
         .required("Comment is required"),
 });
